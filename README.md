@@ -141,7 +141,7 @@ python self_verifying_secure.py verify signed_model.pt
 ## Project Structure
 
 ```
-BIGDATA2025/
+SelfVerifier/
 ├── about-pickle_internal/          # Main implementation (internal signature)
 │   ├── self_verifying_secure.py    # Core signing and verification logic
 │   ├── mldsa44_binding.py          # Python bindings to ML-DSA-44 C library
@@ -152,10 +152,6 @@ BIGDATA2025/
 │   ├── models/                     # Source models for testing
 │   ├── models_defense/             # Signed models
 │   └── models_attack/              # Tampered models for testing
-├── about-pickle_external/          # Alternative: external signature approach
-│   ├── phase1_injection/           # Attack demonstration
-│   ├── phase2_defense/             # Defense implementation
-│   └── phase3_defense_old/         # Legacy defense code
 └── ML-DSA/                         # PQClean ML-DSA-44 source
     ├── crypto_sign/                # ML-DSA implementation
     ├── common/                     # Common utilities
