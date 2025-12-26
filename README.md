@@ -72,9 +72,6 @@ model = pickle.loads(verifier.model_data_bytes)  # Extract model
 - PyTorch
 - PQClean ML-DSA-44 library (compiled as `libmldsa44.so`)
 
-
-## Prerequisites
-
 ### Download models & Build ML-DSA library
 
 See [about-pickle_internal/README.md](about-pickle_internal/README.md#prerequisites) for setup instructions.
