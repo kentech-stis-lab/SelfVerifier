@@ -558,17 +558,6 @@ public_key, secret_key = mldsa44_binding.keypair()
 | `secure_signature.py` | Length-prefix format implementation (Approach B) |
 | `libmldsa44.so` | PQClean ML-DSA-44 shared library |
 
-## Performance Characteristics
-
-| Operation | Typical Time |
-|-----------|--------------|
-| Key generation | ~1-2 ms |
-| Signature creation | ~1-5 ms |
-| Signature verification | ~1-5 ms |
-| SHA-256 hashing | ~0.1-100 ms (model size dependent) |
-
-Total overhead for signing/verification is typically <5% of model load time.
-
 ## Post-Quantum Security
 
 ML-DSA (formerly known as CRYSTALS-Dilithium) is a NIST-standardized post-quantum signature algorithm. It provides security against both classical and quantum computer attacks, future-proofing the binding mechanism against advances in quantum computing.
