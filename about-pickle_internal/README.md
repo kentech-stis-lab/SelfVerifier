@@ -2,6 +2,50 @@
 
 Self-verifying PyTorch model implementation with internal ML-DSA-44 signatures. This directory contains the core implementation for signed-only execution framework.
 
+## Prerequisites
+
+### 1. Create `models/` directory and download models
+
+Before running the tests, download the following models from HuggingFace:
+```bash
+mkdir -p models
+```
+
+| File | Size | Model | Source |
+|------|------|-------|--------|
+| `small_model.pt` | 87 MB | all-MiniLM-L6-v2 | [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) |
+| `medium_model.pt` | 2.5 GB | OPT-1.3B | [facebook/opt-1.3b](https://huggingface.co/facebook/opt-1.3b) |
+| `large_model.pt` | 12.4 GB | OPT-6.7B | [facebook/opt-6.7b](https://huggingface.co/facebook/opt-6.7b) |
+
+**Download script:**
+```python
+import torch
+from transformers import AutoModel, AutoModelForCausalLM
+
+# Small model
+model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+torch.save(model, "models/small_model.pt")
+
+# Medium model
+model = AutoModelForCausalLM.from_pretrained("facebook/opt-1.3b")
+torch.save(model, "models/medium_model.pt")
+
+# Large model
+model = AutoModelForCausalLM.from_pretrained("facebook/opt-6.7b")
+torch.save(model, "models/large_model.pt")
+```
+
+### 2. Build ML-DSA library
+```bash
+cd ../ML-DSA/crypto_sign/ml-dsa-44/1_clean
+make
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD
+```
+
+> **Note:** `models_defense/` and `models_attack/` directories are automatically generated when running the test scripts.
+
+
+
 ## Directory Structure
 
 ```

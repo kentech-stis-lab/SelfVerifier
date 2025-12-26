@@ -1,8 +1,0 @@
-ML-DSA-44 Clean Implementation Benchmark Results
-=================================================
-CPU Frequency: 3.19 GHz
-Iterations: 1000
-
-KEYGEN:  214503 cycles (0.067 ms, 14861.5 ops/sec)
-SIGN:    1008117 cycles (0.316 ms, 3162.2 ops/sec)
-VERIFY:  244100 cycles (0.077 ms, 13059.6 ops/sec)
